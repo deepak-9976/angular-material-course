@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {UntypedFormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
+
 
 
 @Component({
@@ -22,7 +23,7 @@ export class CreateCourseStep1Component {
     longDescription: ['', [Validators.required, Validators.minLength(3)]]
   });
 
-  constructor(private fb: UntypedFormBuilder) {
+  constructor(private fb: FormBuilder) {
 
   }
 

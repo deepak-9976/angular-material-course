@@ -39,7 +39,7 @@ import { MatSliderModule} from '@angular/material/slider';
 import { MatTooltipModule} from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {DragDropComponent} from './drag-drop/drag-drop.component';
-
+import { FormsModule }   from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {TreeDemoComponent} from './tree-demo/tree-demo.component';
 import {MatTreeModule} from '@angular/material/tree';
@@ -89,6 +89,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
         ReactiveFormsModule,
         MatGridListModule,
         MatTreeModule,
+        FormsModule,
         ScrollingModule], providers: [
         CoursesService,
         provideHttpClient(withInterceptorsFromDi())
