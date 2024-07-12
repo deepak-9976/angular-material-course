@@ -5,6 +5,7 @@ import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import {Course} from "../model/course";
 import {CoursesService} from "../services/courses.service";
+import {Lesson} from '../model/lesson';
 import {debounceTime, distinctUntilChanged, startWith, tap, delay} from 'rxjs/operators';
 import {merge, fromEvent} from "rxjs";
 
@@ -102,6 +103,8 @@ export class CourseComponent implements OnInit, AfterViewInit {
                 private coursesService: CoursesService) {
 
     }
+
+    displayedColums = ['seqNo' , 'description' , 'duration'  ]
 
     ngOnInit() {
 

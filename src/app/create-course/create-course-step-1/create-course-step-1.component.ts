@@ -1,5 +1,6 @@
+import { NgModule } from "@angular/core";
 import {Component} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 
 
@@ -9,8 +10,11 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ["create-course-step-1.component.scss"]
 })
 export class CreateCourseStep1Component {
+  myForm: FormGroup;
 
-  form = this.fb.group({
+
+  ngOnInit() {
+  this.myForm = this.fb.group({
     title: ['', [
       Validators.required,
       Validators.minLength(5),
@@ -23,12 +27,14 @@ export class CreateCourseStep1Component {
     longDescription: ['', [Validators.required, Validators.minLength(3)]]
   });
 
+}
+
   constructor(private fb: FormBuilder) {
 
   }
 
   get courseTitle() {
-    return this.form.controls['title'];
+    return this.myForm.controls['title'];
   }
 
 }
